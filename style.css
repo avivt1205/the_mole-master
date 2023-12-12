@@ -1,0 +1,187 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    margin: 0;    
+}
+
+#game {
+    background-color: green;
+    width: 100%;
+    height: auto;
+    position: fixed;
+}
+
+header {
+    float: left;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 5%;
+}
+
+#hud {
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+#hud div {
+    padding: 5%;
+}
+
+#lawn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.hole {
+    width: 120px;
+    height: 150px;
+    background-image: url('mole.png');
+    background-size: 600px;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: 5%;
+    background-position: 0 100%;    
+}
+
+.up {
+    background-position: 25% 100%;
+    cursor: pointer;
+}
+
+.hit {
+    background-position: 50% 100%;
+}
+
+.sad {
+    background-position: 75% 100%;
+}
+
+.start {
+    background-position: 100% 100%;
+    cursor: pointer;
+}
+
+#time, #score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#time label, #score label {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.scores_container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.scores_container h2 {
+    font-size: 40px;    
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.scores_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    text-transform: capitalize;
+}
+#sign-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 420px;
+    width: 100%;
+    height: 250px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-transform: capitalize;
+    z-index: 10;
+    background: green;
+    border: 1px solid #ffffff;
+    transition: all 0.25s ease-in-out;
+}
+#sign-up h3 {
+    font-size: 35px;
+    margin: 0;    
+}
+#player_name {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    padding: 0;
+}
+#player_name::placeholder {
+    color: #fff;
+    text-transform: capitalize;
+    opacity: 0.6;
+    font-size: 15px;
+}
+#submit {    
+    height: 45px;
+    width: 200px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: auto;
+    background: #ffffff;
+    color: green;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    border: none;
+    padding-block: 2px 0;
+    transition: all 0.25s ease-in-out;;
+    z-index: 1;
+}
+#submit:hover {
+    background: #000;
+    color: #fff;
+}
+ul#scores {
+    list-style: none;
+    margin: 0;
+    padding: 0 40px 0 0;
+    margin-bottom: 20px;    
+    width: 100%;
+}
+
+#scores li {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    padding-top: 10px;
+}
+#scores li span {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+.show {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+}

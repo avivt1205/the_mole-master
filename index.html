@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Whack-a-mole</title>
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+<div id="game">
+
+    <header><img src="header.png"></header>
+
+    <div id="hud">
+        <div id="time">
+            <label>Time</label>
+            <span>30</span>
+        </div>
+        <div id="score">
+            <label>score</label>
+            <span>0</span>
+        </div>
+    </div>
+
+    <div id="lawn">
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+    </div>
+
+    <div class="scores_container"> 
+        <h2>scores</h2>        
+        <div id="sign-up" class="hide">
+            <h3>register to scores table</h3>            
+            <input type="text" id="player_name" placeholder="enter your name" />
+            <button id="submit">submit form</button>
+        </div>
+        
+        <div class="scores_wrapper">
+            <span> player name</span>
+            <span> player score</span>
+            <ul id="scores">
+
+            </ul>
+        </div>
+        
+    </div>
+</div>
+ <script src="app.js"></script>
+</body>
+
+</html>
