@@ -46,6 +46,7 @@ const scoresListContainer = document.querySelector('#scores');
 const playerName = document.querySelector('#player_name');
 const popUpContainer = document.querySelector('#sign-up');
 const submitBtn = document.querySelector('#submit');
+const signupParagraph =  document.querySelector('#sign-up p');
 
 /*
   Executed when clicking on the hole with the class 'start'
@@ -69,9 +70,8 @@ const submitBtn = document.querySelector('#submit');
       // when the time is up (time is zero)
       if(game.time === 0) {
         // stop the timer
-        clearInterval(timerId);
-        let finalScore = game.score;
-        createNewItemScore(finalScore);                
+        clearInterval(timerId);        
+        createNewItemScore(game.score);                
         resetGame();
       } else {
         // update the game state
@@ -156,11 +156,13 @@ function createNewItemScore(finalScore) {
     popUpContainer.classList.replace('hide', 'show');
   }
   
+  signupParagraph.innerText = 'wow! you score ' + finalScore + ' pointes!';
+
   //creating list item with users name entered and the final score he got
   const newPlayerScoreItem = document.createElement('li');
   const playerSpan = document.createElement('span');
   const playerScoreSpan = document.createElement('span');
-
+  
   //botton to inset the score + name inside the socres unordered list we pre created.
   submitBtn.addEventListener('click', function() {
     playerSpan.innerText = playerName.value;

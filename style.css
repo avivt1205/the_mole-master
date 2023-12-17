@@ -117,6 +117,10 @@ header {
     font-size: 35px;
     margin: 0;    
 }
+#sign-up p {
+    color: #ffffff;
+    text-transform: capitalize;
+}
 #player_name {
     background: transparent;
     border-radius: 0;
