@@ -26,7 +26,7 @@
 // create an object with all the relevant game information
 const game = {
   score: 0,
-  time: 30,
+  time: 5,
   gameOver: true
 }
 
@@ -47,6 +47,7 @@ const playerName = document.querySelector('#player_name');
 const popUpContainer = document.querySelector('#sign-up');
 const submitBtn = document.querySelector('#submit');
 const signupParagraph =  document.querySelector('#sign-up p');
+
 
 /*
   Executed when clicking on the hole with the class 'start'
@@ -150,32 +151,41 @@ function whack(event) {
    - also to save a players name we need to open popup with input text field to allow 
    the user to save his recored.
 */
-function createNewItemScore(finalScore) {  
+function createNewItemScore(finalScore) {
   //open popup window to enter user name and save it in 'const' variable
   if(popUpContainer.classList.contains('hide')) {
     popUpContainer.classList.replace('hide', 'show');
   }
-  
+  //leting the user know his score again
   signupParagraph.innerText = 'wow! you score ' + finalScore + ' pointes!';
 
   //creating list item with users name entered and the final score he got
   const newPlayerScoreItem = document.createElement('li');
-  const playerSpan = document.createElement('span');
+  const playerNameSpan = document.createElement('span');
   const playerScoreSpan = document.createElement('span');
-  
+
+  newPlayerScoreItem.appendChild(playerNameSpan);
+  newPlayerScoreItem.appendChild(playerScoreSpan);
+
   //botton to inset the score + name inside the socres unordered list we pre created.
   submitBtn.addEventListener('click', function() {
-    playerSpan.innerText = playerName.value;
+    
+    playerNameSpan.innerText = playerName.value;
     playerScoreSpan.innerText = finalScore;
 
-    newPlayerScoreItem.appendChild(playerSpan);
-    newPlayerScoreItem.appendChild(playerScoreSpan);
-    scoresListContainer.appendChild(newPlayerScoreItem);
+    let i = 0;
+    while(i <= scoresListContainer.children.length) {     
+      scoresListContainer.appendChild(newPlayerScoreItem);
+      i++;      
+    }
 
+    playerName.value = '';
+    
     //hidding the popup after we initiate the sequence.
     popUpContainer.classList.replace('show', 'hide');
   });
-
+  
+  
 }
 
 /*
@@ -186,7 +196,7 @@ function resetGame() {
   // reset game to initial values
   game.gameOver = true;
   game.score = 0;
-  game.time = 30;
+  game.time = 5;
 
   // sync the UI
   timerElement.innerText = game.time;
